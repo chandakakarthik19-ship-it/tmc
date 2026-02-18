@@ -1,0 +1,148 @@
+[
+  {
+    "_id": "1",
+    "name": "CPC (AAPC) - Medical",
+    "description": "This comprehensive CPC (AAPC) course is designed to provide you with industry-relevant skills and certification in medical coding. Learn medical coding from basics to advanced concepts with hands-on case studies.",
+    "category": "Medical",
+    "duration": "45 Days",
+    "mode": "Online/Offline",
+    "price": 12999,
+    "instructor": "Ms. Sarah Johnson",
+    "maxStudents": 25,
+    "curriculum": [
+      "Medical coding fundamentals",
+      "ICD-10 coding",
+      "CPT coding",
+      "HCPCS coding",
+      "Real-world claims processing",
+      "Compliance and regulations"
+    ],
+    "prerequisites": ["High school diploma"],
+    "certification": "CPC (AAPC) Certification"
+  },
+  {
+    "_id": "2",
+    "name": "CCS - Medical",
+    "description": "Become a Certified Coding Specialist with this comprehensive course covering inpatient hospital coding. Master ICD-10-CM, ICD-10-PCS, and CPT coding standards.",
+    "category": "Medical",
+    "duration": "50 Days",
+    "mode": "Online",
+    "price": 13999,
+    "instructor": "Dr. Emily Chen",
+    "maxStudents": 20,
+    "curriculum": [
+      "Hospital coding basics",
+      "ICD-10-CM coding",
+      "ICD-10-PCS coding",
+      "CPT coding for hospital services",
+      "Clinical documentation",
+      "Compliance requirements"
+    ],
+    "prerequisites": ["High school diploma"],
+    "certification": "CCS Certification"
+  },
+  {
+    "_id": "3",
+    "name": "SDS - Medical",
+    "description": "Specialized coding course focusing on home health, hospice, and specialty care documentation. Perfect for professionals in outpatient and specialty settings.",
+    "category": "Medical",
+    "duration": "40 Days",
+    "mode": "Online",
+    "price": 10999,
+    "instructor": "Mr. Robert Wilson",
+    "maxStudents": 30,
+    "curriculum": [
+      "Home health coding",
+      "Hospice documentation",
+      "Specialized coding concepts",
+      "Compliance and regulations",
+      "Real-world scenarios",
+      "Professional standards"
+    ],
+    "prerequisites": ["Basic medical knowledge"],
+    "certification": "Specialty Coding Certificate"
+  },
+  {
+    "_id": "4",
+    "name": "Python Programming",
+    "description": "This comprehensive Python Programming course is designed to provide you with industry-relevant skills and certification. Learn from basics to advanced concepts with hands-on projects.",
+    "category": "IT",
+    "duration": "70 Days",
+    "mode": "Online",
+    "price": 4999,
+    "instructor": "Mr. Rajesh Kumar",
+    "maxStudents": 30,
+    "curriculum": [
+      "Python fundamentals",
+      "Object-oriented programming",
+      "Data structures",
+      "Web development with Django",
+      "Database integration",
+      "Real-world projects"
+    ],
+    "prerequisites": ["Basic computer knowledge"],
+    "certification": "Industry Recognized Python Certification"
+  },
+  {
+    "_id": "5",
+    "name": "Java Programming",
+    "description": "Master Java programming with our comprehensive course covering object-oriented principles, design patterns, and real-world applications. Perfect for beginners and intermediate learners.",
+    "category": "IT",
+    "duration": "75 Days",
+    "mode": "Online",
+    "price": 5499,
+    "instructor": "Ms. Priya Sharma",
+    "maxStudents": 25,
+    "curriculum": [
+      "Core Java fundamentals",
+      "Object-Oriented Programming",
+      "Design Patterns",
+      "Spring Framework",
+      "Database integration",
+      "Real project implementation"
+    ],
+    "prerequisites": ["Programming basics"],
+    "certification": "Industry Recognized Java Certification"
+  },
+  {
+    "_id": "6",
+    "name": "C Programming",
+    "description": "Learn C programming from scratch. This course covers fundamental concepts of programming, memory management, and system-level programming. Essential for aspiring software engineers.",
+    "category": "IT",
+    "duration": "60 Days",
+    "mode": "Online/Offline",
+    "price": 3999,
+    "instructor": "Dr. Amit Patel",
+    "maxStudents": 35,
+    "curriculum": [
+      "Programming fundamentals",
+      "Data structures",
+      "Pointers and memory management",
+      "File handling",
+      "Advanced concepts"
+    ],
+    "prerequisites": ["None"],
+    "certification": "Industry Recognized C Certification"
+  },
+  {
+    "_id": "7",
+    "name": "C++ Programming",
+    "description": "Advanced C++ course focusing on object-oriented programming, STL, and modern C++ features. Build efficient systems and applications with C++.",
+    "category": "IT",
+    "duration": "80 Days",
+    "mode": "Online",
+    "price": 5999,
+    "instructor": "Prof. John Anderson",
+    "maxStudents": 20,
+    "curriculum": [
+      "C++ fundamentals",
+      "Object-oriented programming",
+      "Standard Template Library (STL)",
+      "Modern C++ features",
+      "System programming",
+      "Performance optimization"
+    ],
+    "prerequisites": ["C programming knowledge"],
+    "certification": "Industry Recognized C++ Certification"
+  }
+]

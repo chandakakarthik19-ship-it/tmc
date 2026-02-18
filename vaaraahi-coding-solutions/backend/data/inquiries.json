@@ -1,0 +1,32 @@
+[
+  {
+    "_id": "177108641799465hrfx8ok",
+    "message": "ENROLLMENT REQUEST for CPC (AAPC)",
+    "additionalInformation": "Very interested in this course. Please provide more details.",
+    "educationalQualification": "Postgraduate",
+    "enrollmentType": "course_enrollment",
+    "name": "Karthik Sharma",
+    "status": "New",
+    "agreeToTerms": true,
+    "courseInterest": "CPC (AAPC)",
+    "phone": "9876543210",
+    "email": "karthik@gmail.com",
+    "createdAt": "2026-02-14T16:26:57.994Z",
+    "updatedAt": "2026-02-14T16:26:57.994Z"
+  },
+  {
+    "_id": "1771088647971oxgruz0od",
+    "message": "ENROLLMENT REQUEST for CPC (AAPC)",
+    "additionalInformation": "Test enrollment from terminal",
+    "educationalQualification": "Undergraduate",
+    "enrollmentType": "course_enrollment",
+    "name": "Test User",
+    "status": "New",
+    "agreeToTerms": true,
+    "courseInterest": "CPC (AAPC)",
+    "phone": "9999999999",
+    "email": "testuser@gmail.com",
+    "createdAt": "2026-02-14T17:04:07.971Z",
+    "updatedAt": "2026-02-14T17:04:07.971Z"
+  }
+]
