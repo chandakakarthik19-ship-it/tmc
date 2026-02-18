@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import { BASE_URL } from '../config'
 
 export default function Alumni() {
   const [alumni, setAlumni] = useState([])
@@ -11,7 +12,7 @@ export default function Alumni() {
 
   const fetchAlumni = async () => {
     try {
-      const response = await axios.get('/api/alumni')
+      const response = await axios.get(`${BASE_URL}/api/alumni`)
       setAlumni(response.data)
     } catch (err) {
       console.error('Failed to fetch alumni:', err)

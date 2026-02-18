@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import { BASE_URL } from '../config'
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -71,7 +72,7 @@ export default function Contact() {
 
   const fetchInquiries = async () => {
     try {
-      const response = await axios.get('/api/inquiries')
+      const response = await axios.get(`${BASE_URL}/api/inquiries`)
       setInquiries(response.data)
       setShowInquiries(true)
     } catch (err) {
@@ -84,7 +85,7 @@ export default function Contact() {
     if (!window.confirm('Are you sure you want to delete this inquiry?')) return
     
     try {
-      await axios.delete(`/api/inquiries/${id}`)
+      await axios.delete(`${BASE_URL}/api/inquiries/${id}`)
       setInquiries(inquiries.filter(inq => inq._id !== id))
       alert('Inquiry deleted successfully')
     } catch (err) {
@@ -173,7 +174,7 @@ export default function Contact() {
 
     setLoading(true)
     try {
-      await axios.post('/api/inquiries', formData)
+      await axios.post(`${BASE_URL}/api/inquiries`, formData)
       setSubmitted(true)
       setFormData({ name: '', email: '', phone: '', courseInterest: '', message: '' })
       setTimeout(() => setSubmitted(false), 4000)

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import { BASE_URL } from '../config'
 
 export default function Gallery() {
   const [images, setImages] = useState([])
@@ -29,7 +30,7 @@ export default function Gallery() {
 
   const fetchImages = async () => {
     try {
-      const response = await axios.get('/api/gallery')
+      const response = await axios.get(`${BASE_URL}/api/gallery`)
       setImages(response.data)
     } catch (err) {
       console.error('Failed to fetch images:', err)
@@ -106,7 +107,7 @@ export default function Gallery() {
       formData.append('description', uploadData.description)
       formData.append('category', uploadData.category)
       
-      const response = await axios.post('/api/gallery', formData, {
+      const response = await axios.post(`${BASE_URL}/api/gallery`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
@@ -134,7 +135,7 @@ export default function Gallery() {
     if (!window.confirm('Are you sure you want to delete this image?')) return
     
     try {
-      await axios.delete(`/api/gallery/${id}`)
+      await axios.delete(`${BASE_URL}/api/gallery/${id}`)
       setImages(images.filter(img => img._id !== id))
       setSelectedImage(null)
       alert('Image deleted successfully!')

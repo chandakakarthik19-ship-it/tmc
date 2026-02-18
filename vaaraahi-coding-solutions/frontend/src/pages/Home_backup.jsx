@@ -1,6 +1,7 @@
 import { Link, useLocation } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import { BASE_URL } from '../config'
 
 export default function Home() {
   const location = useLocation()
@@ -35,7 +36,7 @@ export default function Home() {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const response = await axios.get('/api/courses')
+        const response = await axios.get(`${BASE_URL}/api/courses`)
         if (Array.isArray(response.data)) {
           setApiCourses(response.data)
         } else {
@@ -69,7 +70,7 @@ export default function Home() {
     setFormSubmitting(true)
     
     try {
-      await axios.post('/api/enrollments', {
+      await axios.post(`${BASE_URL}/api/enrollments`, {
         name: enrollFormData.name,
         email: enrollFormData.email,
         phone: enrollFormData.phone,

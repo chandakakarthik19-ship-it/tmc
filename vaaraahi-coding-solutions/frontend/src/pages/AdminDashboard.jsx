@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import { BASE_URL } from '../config'
 
 export default function AdminDashboard() {
   const navigate = useNavigate()
@@ -68,8 +69,8 @@ export default function AdminDashboard() {
   const fetchInquiries = async () => {
     setLoading(true)
     try {
-      console.log('🔄 Fetching inquiries from:', '/api/inquiries')
-      const response = await axios.get('/api/inquiries')
+      console.log('🔄 Fetching inquiries from:', `${BASE_URL}/api/inquiries`)
+      const response = await axios.get(`${BASE_URL}/api/inquiries`)
       console.log('✅ Response received:', response.status)
       console.log('📊 Data:', response.data)
       
@@ -97,7 +98,7 @@ export default function AdminDashboard() {
 
     try {
       console.log('🗑️ Deleting inquiry ID:', id)
-      const response = await axios.delete(`/api/inquiries/${id}`)
+      const response = await axios.delete(`${BASE_URL}/api/inquiries/${id}`)
       console.log('✅ Delete response:', response.data)
       
       // Remove from state
@@ -207,7 +208,7 @@ export default function AdminDashboard() {
 
     setCourseSubmitting(true)
     try {
-      await axios.post('/api/courses', {
+      await axios.post(`${BASE_URL}/api/courses`, {
         ...courseForm,
         price: 0
       })

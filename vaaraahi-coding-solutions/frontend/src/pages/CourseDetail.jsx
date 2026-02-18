@@ -1,6 +1,7 @@
 import { useParams, useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import { BASE_URL } from '../config'
 
 export default function CourseDetail() {
   const { id } = useParams()
@@ -32,7 +33,7 @@ export default function CourseDetail() {
 
   const fetchCourse = async () => {
     try {
-      const response = await axios.get(`/api/courses/${id}`)
+      const response = await axios.get(`${BASE_URL}/api/courses/${id}`)
       setCourse(response.data)
     } catch (err) {
       setError('Failed to fetch course details')
@@ -65,7 +66,7 @@ export default function CourseDetail() {
   const handleRequestInfo = async (e) => {
     e.preventDefault()
     try {
-      await axios.post('/api/inquiries', {
+      await axios.post(`${BASE_URL}/api/inquiries`, {
         ...formData,
         courseInterest: course.name,
         message: `Interested in ${course.name}`,
@@ -106,14 +107,14 @@ export default function CourseDetail() {
     
     try {
       console.log('Starting enrollment submission...')
-      console.log('POST URL:', '/api/enrollments')
+      console.log('POST URL:', `${BASE_URL}/api/enrollments`)
       console.log('Request payload:', {
         ...enrollData,
         courseInterest: course.name,
         status: 'New'
       })
       
-      const response = await axios.post('/api/enrollments', {
+      const response = await axios.post(`${BASE_URL}/api/enrollments`, {
         ...enrollData,
         courseInterest: course.name,
         status: 'New'

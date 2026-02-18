@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
+import { BASE_URL } from '../config'
 
 export default function Courses() {
   const [courses, setCourses] = useState([])
@@ -21,7 +22,7 @@ export default function Courses() {
 
   const fetchCourses = async () => {
     try {
-      const response = await axios.get('/api/courses')
+      const response = await axios.get(`${BASE_URL}/api/courses`)
       setCourses(response.data)
     } catch (err) {
       setError('Failed to fetch courses')
@@ -71,14 +72,14 @@ export default function Courses() {
     
     try {
       console.log('Starting enrollment submission...')
-      console.log('POST URL:', '/api/enrollments')
+      console.log('POST URL:', `${BASE_URL}/api/enrollments`)
       console.log('Request payload:', {
         ...enrollData,
         courseInterest: selectedCourse.name,
         status: 'New'
       })
       
-      const response = await axios.post('/api/enrollments', {
+      const response = await axios.post(`${BASE_URL}/api/enrollments`, {
         ...enrollData,
         courseInterest: selectedCourse.name,
         status: 'New'

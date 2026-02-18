@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import { BASE_URL } from '../config'
 
 export default function Enrollments() {
   const navigate = useNavigate()
@@ -21,7 +22,7 @@ export default function Enrollments() {
     setLoading(true)
     try {
       console.log('🔄 Fetching enrollments...')
-      const response = await axios.get('/api/enrollments')
+      const response = await axios.get(`${BASE_URL}/api/enrollments`)
       
       if (Array.isArray(response.data)) {
         setEnrollments(response.data)
@@ -44,7 +45,7 @@ export default function Enrollments() {
 
     try {
       console.log('🗑️ Deleting enrollment ID:', id)
-      await axios.delete(`/api/enrollments/${id}`)
+      await axios.delete(`${BASE_URL}/api/enrollments/${id}`)
       
       setEnrollments(enrollments.filter(enr => enr._id !== id))
       setShowModal(false)
