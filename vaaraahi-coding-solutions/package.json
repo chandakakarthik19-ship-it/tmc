@@ -8,7 +8,9 @@
     "install-all": "npm install && npm run frontend:install && npm run backend:install",
     "frontend:dev": "cd frontend && npm run dev",
     "backend:dev": "cd backend && npm run dev",
-    "frontend:build": "cd frontend && npm run build"
+    "frontend:build": "cd frontend && npm run build",
+    "postinstall": "npm --prefix backend install",
+    "start": "npm --prefix backend start"
   },
   "keywords": [
     "MERN",
