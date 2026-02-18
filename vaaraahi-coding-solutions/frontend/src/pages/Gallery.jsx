@@ -19,6 +19,12 @@ export default function Gallery() {
   const [adminPassword, setAdminPassword] = useState('')
   const [showAdminLogin, setShowAdminLogin] = useState(false)
 
+  const getImageSrc = (url) => {
+    if (!url) return ''
+    if (url.startsWith('http://') || url.startsWith('https://')) return url
+    return `${BASE_URL}${url.startsWith('/') ? '' : '/'}${url}`
+  }
+
   useEffect(() => {
     fetchImages()
     // Check if admin is logged in from localStorage
@@ -220,7 +226,7 @@ export default function Gallery() {
               >
                 <div className="aspect-square overflow-hidden bg-gray-700">
                   <img
-                    src={image.imageUrl}
+                    src={getImageSrc(image.imageUrl)}
                     alt={image.title}
                     className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                     onError={(e) => {
