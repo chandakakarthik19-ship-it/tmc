@@ -60,7 +60,7 @@ export default {
         tmc: {
           navy: '#003d7a',
           orange: '#FF6B35',
-          light: '#f9f9f9',
+          light: '#695858',
           cream: '#fff5f0',
         },
         text: {

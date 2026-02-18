@@ -234,13 +234,15 @@ export default function AdminDashboard() {
   const filteredInquiries = getFilteredInquiries()
 
   return (
-    <div className="min-h-screen bg-slate-dark">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900">
       {/* Header */}
       <div className="bg-gradient-to-r from-accent-blue to-blue-700 text-white p-6 shadow-lg sticky top-0 z-40">
         <div className="container mx-auto">
           <div className="flex justify-between items-center mb-4">
             <div>
-              <h1 className="text-3xl font-bold">Admin Dashboard</h1>
+              <h1 className="text-3xl font-bold bg-gradient-to-r from-white via-blue-100 to-cyan-200 text-transparent bg-clip-text">
+                Admin Dashboard
+              </h1>
               <p className="text-blue-100 mt-1">Manage all inquiries and enrollments</p>
             </div>
             <button
@@ -470,24 +472,24 @@ export default function AdminDashboard() {
         ) : (
           <div className="bg-white rounded-lg shadow-md overflow-hidden">
             <div className="overflow-x-auto">
-              <table className="w-full">
+              <table className="w-full text-gray-900">
                 <thead>
-                  <tr className="bg-gray-100 border-b">
-                    <th className="px-6 py-3 text-left font-semibold text-gray-700">Name</th>
-                    <th className="px-6 py-3 text-left font-semibold text-gray-700">Email</th>
-                    <th className="px-6 py-3 text-left font-semibold text-gray-700">Phone</th>
-                    <th className="px-6 py-3 text-left font-semibold text-gray-700">Course</th>
-                    <th className="px-6 py-3 text-left font-semibold text-gray-700">Type</th>
-                    <th className="px-6 py-3 text-left font-semibold text-gray-700">Date</th>
-                    <th className="px-6 py-3 text-left font-semibold text-gray-700">Actions</th>
+                  <tr className="bg-gradient-to-r from-slate-100 via-white to-slate-100 border-b">
+                    <th className="px-6 py-3 text-left font-semibold text-gray-900">Name</th>
+                    <th className="px-6 py-3 text-left font-semibold text-gray-900">Email</th>
+                    <th className="px-6 py-3 text-left font-semibold text-gray-900">Phone</th>
+                    <th className="px-6 py-3 text-left font-semibold text-gray-900">Course</th>
+                    <th className="px-6 py-3 text-left font-semibold text-gray-900">Type</th>
+                    <th className="px-6 py-3 text-left font-semibold text-gray-900">Date</th>
+                    <th className="px-6 py-3 text-left font-semibold text-gray-900">Actions</th>
                   </tr>
                 </thead>
                 <tbody>
                   {filteredInquiries.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)).map((inquiry) => (
-                    <tr key={inquiry._id} className="border-b hover:bg-gray-50 transition-colors duration-200">
+                    <tr key={inquiry._id} className="border-b odd:bg-white even:bg-slate-50 hover:bg-slate-100 transition-colors duration-200">
                       <td className="px-6 py-4 font-semibold text-gray-900">{inquiry.name}</td>
-                      <td className="px-6 py-4 text-gray-600">{inquiry.email}</td>
-                      <td className="px-6 py-4 text-gray-600">{inquiry.phone}</td>
+                      <td className="px-6 py-4 text-gray-800">{inquiry.email}</td>
+                      <td className="px-6 py-4 text-gray-800">{inquiry.phone}</td>
                       <td className="px-6 py-4">
                         <span className="px-3 py-1 rounded-full text-sm font-semibold bg-blue-100 text-blue-800">
                           {inquiry.courseInterest}
@@ -509,7 +511,7 @@ export default function AdminDashboard() {
                           </span>
                         </div>
                       </td>
-                      <td className="px-6 py-4 text-sm text-gray-600">
+                      <td className="px-6 py-4 text-sm text-gray-700">
                         {new Date(inquiry.createdAt).toLocaleDateString('en-US', {
                           year: 'numeric',
                           month: 'short',

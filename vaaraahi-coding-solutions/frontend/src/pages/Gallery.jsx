@@ -282,7 +282,7 @@ export default function Gallery() {
                 value={adminPassword}
                 onChange={(e) => setAdminPassword(e.target.value)}
                 onKeyPress={(e) => e.key === 'Enter' && handleAdminLogin()}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-coral focus:border-transparent"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg text-blue-700 placeholder-blue-400 focus:ring-2 focus:ring-coral focus:border-transparent"
                 placeholder="Enter admin password"
                 autoFocus
               />
@@ -312,12 +312,12 @@ export default function Gallery() {
           onClick={() => setShowUploadForm(false)}
         >
           <div
-            className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl animate-scaleIn my-8"
+            className="bg-gradient-to-br from-[#0F172A] to-[#1E1B4B] rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl animate-scaleIn my-8"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="sticky top-0 bg-gradient-to-r from-navy to-navy-light text-white p-6 rounded-t-2xl">
               <div className="flex justify-between items-center">
-                <h2 className="text-2xl font-bold">Upload New Image</h2>
+                <h2 className="text-2xl font-bold text-white">Upload New Image</h2>
                 <button
                   onClick={() => setShowUploadForm(false)}
                   className="text-white hover:bg-white hover:bg-opacity-20 rounded-full p-2 transition-all duration-300"
@@ -332,7 +332,7 @@ export default function Gallery() {
             <form onSubmit={handleUploadSubmit} className="p-8 space-y-6">
               {/* Title Field */}
               <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                <label className="block text-sm font-semibold text-transparent bg-clip-text bg-gradient-to-r from-orange-200 to-green-200 mb-2">
                   Title <span className="text-red-500">*</span>
                 </label>
                 <input
@@ -341,14 +341,14 @@ export default function Gallery() {
                   value={uploadData.title}
                   onChange={handleUploadChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-coral focus:border-transparent"
+                  className="w-full px-4 py-3 border border-pink-400 bg-gradient-to-r from-pink-300 to-blue-200 rounded-lg text-black placeholder-black focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   placeholder="Enter image title"
                 />
               </div>
 
               {/* Image File Upload Field */}
               <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                <label className="block text-sm font-semibold text-transparent bg-clip-text bg-gradient-to-r from-orange-200 to-green-200 mb-2">
                   Select Image <span className="text-red-500">*</span>
                 </label>
                 <input
@@ -356,21 +356,21 @@ export default function Gallery() {
                   accept="image/*"
                   onChange={handleFileChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-coral focus:border-transparent file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-coral file:text-white hover:file:bg-coral-dark file:cursor-pointer"
+                  className="w-full px-4 py-3 border border-pink-400 bg-gradient-to-r from-pink-300 to-blue-200 rounded-lg text-black placeholder-black focus:ring-2 focus:ring-blue-500 focus:border-transparent file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-pink-600 file:text-white hover:file:bg-pink-700 file:cursor-pointer"
                 />
-                <p className="text-xs text-gray-500 mt-1">Upload an image file (Max 5MB, JPG, PNG, GIF)</p>
+                <p className="text-xs text-orange-100 mt-1">Upload an image file (Max 5MB, JPG, PNG, GIF)</p>
               </div>
 
               {/* Category Field */}
               <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                <label className="block text-sm font-semibold text-transparent bg-clip-text bg-gradient-to-r from-orange-200 to-green-200 mb-2">
                   Category
                 </label>
                 <select
                   name="category"
                   value={uploadData.category}
                   onChange={handleUploadChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-coral focus:border-transparent"
+                  className="w-full px-4 py-3 border border-pink-400 bg-gradient-to-r from-pink-300 to-blue-200 rounded-lg text-black focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 >
                   <option value="general">General</option>
                   <option value="events">Events</option>
@@ -382,7 +382,7 @@ export default function Gallery() {
 
               {/* Description Field */}
               <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                <label className="block text-sm font-semibold text-transparent bg-clip-text bg-gradient-to-r from-orange-200 to-green-200 mb-2">
                   Description (Optional)
                 </label>
                 <textarea
@@ -390,7 +390,7 @@ export default function Gallery() {
                   value={uploadData.description}
                   onChange={handleUploadChange}
                   rows="3"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-coral focus:border-transparent resize-none"
+                  className="w-full px-4 py-3 border border-pink-400 bg-gradient-to-r from-pink-300 to-blue-200 rounded-lg text-black placeholder-black focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
                   placeholder="Brief description of the image"
                 ></textarea>
               </div>
@@ -398,7 +398,7 @@ export default function Gallery() {
               {/* Preview */}
               {previewUrl && (
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">Preview</label>
+                  <label className="block text-sm font-semibold text-transparent bg-clip-text bg-gradient-to-r from-orange-200 to-green-200 mb-2">Preview</label>
                   <div className="border border-gray-300 rounded-lg overflow-hidden">
                     <img
                       src={previewUrl}
@@ -415,14 +415,14 @@ export default function Gallery() {
                   type="button"
                   onClick={() => setShowUploadForm(false)}
                   disabled={uploading}
-                  className="flex-1 px-6 py-3 border-2 border-gray-300 text-gray-700 rounded-lg font-semibold hover:bg-gray-50 transition-all duration-300 disabled:opacity-50"
+                  className="flex-1 px-6 py-3 border-2 border-orange-300 text-orange-100 rounded-lg font-semibold hover:bg-orange-900/30 transition-all duration-300 disabled:opacity-50"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
                   disabled={uploading}
-                  className="flex-1 px-6 py-3 bg-gradient-to-r from-coral to-coral-light text-white rounded-lg font-semibold hover:from-coral-dark hover:to-coral transition-all duration-300 disabled:opacity-50"
+                  className="flex-1 px-6 py-3 bg-gradient-to-r from-orange-200 to-green-200 text-black rounded-lg font-semibold hover:from-orange-300 hover:to-green-300 transition-all duration-300 disabled:opacity-50"
                 >
                   {uploading ? 'Uploading...' : 'Upload Image'}
                 </button>
@@ -447,7 +447,7 @@ export default function Gallery() {
                 ×
               </button>
               <img
-                src={selectedImage.imageUrl}
+                src={getImageSrc(selectedImage.imageUrl)}
                 alt={selectedImage.title}
                 className="w-full max-h-[80vh] object-contain rounded-lg"
               />
