@@ -57,6 +57,10 @@ app.use('/api/courses', courseRoutes)
 app.get('/api', (req, res) => {
   res.json({ message: 'Vaaraahi Coding Solutions API' })
 })
+// Root Route (NEW)
+app.get('/', (req, res) => {
+  res.send('Vaaraahi Backend Running Successfully 🚀');
+});
 
 // Start Server
 const PORT = process.env.PORT || 5000
