@@ -21,6 +21,7 @@ export default function Gallery() {
 
   const getImageSrc = (url) => {
     if (!url) return ''
+    if (url.startsWith('data:')) return url
     if (url.startsWith('http://') || url.startsWith('https://')) return url
     return `${BASE_URL}${url.startsWith('/') ? '' : '/'}${url}`
   }
@@ -450,6 +451,9 @@ export default function Gallery() {
                 src={getImageSrc(selectedImage.imageUrl)}
                 alt={selectedImage.title}
                 className="w-full max-h-[80vh] object-contain rounded-lg"
+                onError={(e) => {
+                  e.target.src = 'https://via.placeholder.com/1200x800?text=Image+Not+Found'
+                }}
               />
               <div className="bg-white rounded-b-lg p-6 mt-2">
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">{selectedImage.title}</h3>

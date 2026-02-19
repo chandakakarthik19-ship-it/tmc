@@ -3,11 +3,17 @@ import mongoose from 'mongoose'
 import cors from 'cors'
 import bodyParser from 'body-parser'
 import dotenv from 'dotenv'
+import path from 'path'
+import { fileURLToPath } from 'url'
 
 // Load environment variables
 dotenv.config()
 
 const app = express()
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+const uploadsDir = path.join(__dirname, 'uploads')
 
 // Middleware
 app.use(cors())
@@ -15,7 +21,7 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
 // Serve static files from uploads directory
-app.use('/uploads', express.static('uploads'))
+app.use('/uploads', express.static(uploadsDir))
 
 // MongoDB Connection
 console.log('Connecting to MongoDB Atlas...')
@@ -67,3 +73,4 @@ const PORT = process.env.PORT || 5000
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
 })
+

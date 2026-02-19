@@ -10,17 +10,10 @@ const router = express.Router()
 // Get __dirname equivalent in ES modules
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
+const uploadsDir = path.join(__dirname, '..', 'uploads')
 
 // Configure multer for file uploads
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, 'uploads/')
-  },
-  filename: (req, file, cb) => {
-    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
-    cb(null, uniqueSuffix + path.extname(file.originalname))
-  }
-})
+const storage = multer.memoryStorage()
 
 const fileFilter = (req, file, cb) => {
   // Accept only image files
@@ -75,8 +68,8 @@ router.post('/', upload.single('image'), async (req, res) => {
       return res.status(400).json({ message: 'Image file is required' })
     }
 
-    // Create the image URL from the uploaded file
-    const imageUrl = `/uploads/${req.file.filename}`
+    // Store uploaded image in DB so it is visible across all devices
+    const imageUrl = `data:${req.file.mimetype};base64,${req.file.buffer.toString('base64')}`
 
     const newImage = new Gallery({
       title,
@@ -125,7 +118,7 @@ router.delete('/:id', async (req, res) => {
     // Delete the physical file if it exists in uploads folder
     if (deletedImage.imageUrl && deletedImage.imageUrl.startsWith('/uploads/')) {
       const filename = deletedImage.imageUrl.replace('/uploads/', '')
-      const filePath = path.join('uploads', filename)
+      const filePath = path.join(uploadsDir, filename)
       
       fs.unlink(filePath, (err) => {
         if (err) {
